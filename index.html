@@ -10,21 +10,29 @@
     <div class="container">
         <h1>JSpeedTest</h1>
         <div class="play">
-            <div class="button">
+            <div class="button" id="playButton">
                 <p>play</p>
             </div>
         </div>
-        <div class="game">
+        <div id="game">
             <div id="time">00:00:00</div>
             <div class="play">
-                <div class="button">
+                <div class="button" id="start">
                     <p>start</p>
                 </div>
-                <div class="button">
+                <p id="countdown"></p>
+                <div class="button" id="stop">
                     <p>stop</p>
                 </div>
             </div>
+            <hr>
             <p id="last">Your last try was : <span>00:00:00</span></p>
+            <hr>
+            <div class="play">
+                <div class="button" id="close">
+                    <p>Close</p>
+                </div>
+            </div>
         </div>
     </div>
     <script src="./js/index.js"></script>

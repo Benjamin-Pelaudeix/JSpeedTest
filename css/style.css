@@ -48,7 +48,7 @@ h1 {
 .play {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 15px;
 }
 .button {
@@ -65,12 +65,25 @@ h1 {
     color: rgb(37, 37, 37);
     border-color: rgb(37, 37, 37);
 }
+#game {
+    display: none;
+}
 #time {
     font-size: 4rem;
     margin-top: 15px;
 }
-#last {
+#countdown {
+    font-family: "F1 Bold";
+    font-size: 2rem;
+    margin: 0 30px;
+    width: max-content;
+    min-width: 55.33px;
+}
+hr:nth-child(3) {
     margin-top: 15px;
+}
+#last {
+    margin: 15px 0;
     font-size: 1.2rem;
 }
 span {
