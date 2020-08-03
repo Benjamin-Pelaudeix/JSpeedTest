@@ -1,0 +1,78 @@
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*fonts*/
+@font-face {
+    font-family: "F1 Regular";
+    src: url(../fonts/Formula1-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "F1 Bold";
+    src: url(../fonts/Formula1-Bold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*style*/
+body {
+    background-color: rgb(37, 37, 37);
+    font-family: "F1 Regular";
+    color: white;
+    text-align: center;
+}
+.container {
+    /*size*/
+    width: fit-content;
+    height: fit-content;
+    padding: 50px;
+    /*border*/
+    border: 2px solid white;
+    border-radius: 10px;
+    /*alignment*/
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
+h1 {
+    /*font*/
+    font-family: "F1 Bold";
+    font-size: 6rem;
+}
+.play {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.button {
+    text-transform: uppercase;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 3px 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.button:hover {
+    background-color: white;
+    color: rgb(37, 37, 37);
+    border-color: rgb(37, 37, 37);
+}
+#time {
+    font-size: 4rem;
+    margin-top: 15px;
+}
+#last {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+span {
+    font-family: "F1 Bold";
+}
