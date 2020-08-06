@@ -6,9 +6,14 @@ const resetButton = document.getElementById('reset');
 const game = document.getElementById('game');
 const timerMilliseconds = document.getElementById('milliseconds');
 const timerHundreds = document.getElementById('hundreds');
+const millisecondsLastTimeResult = document.getElementById('millisecondsResult');
+const hundredsLastTimeResult = document.getElementById('hundredsResult');
 
 timerMilliseconds.innerHTML = "00";
 timerHundreds.innerHTML = "00";
+
+millisecondsLastTimeResult.innerHTML = "00";
+hundredsLastTimeResult.innerHTML = "00";
 
 playButton.addEventListener('click', function() {
     playButton.style.display = 'none';
@@ -80,6 +85,22 @@ function timerReset() {
     timerHundreds.innerHTML = "0" + hundreds;
 }
 
+function saveLastTime() {
+    if (milliseconds < 10) {
+        millisecondsLastTimeResult.innerHTML = "0" + milliseconds;
+    }
+    else {
+        millisecondsLastTimeResult.innerHTML = milliseconds;
+    }
+    if (hundreds < 10) {
+        hundredsLastTimeResult.innerHTML = "0" + hundreds;
+    }
+    else {
+        hundredsLastTimeResult.innerHTML = hundreds;
+    }
+    
+}
+
 startButton.addEventListener('click', function() {
     interval = setTimeout(updateCountdown, randomTiming);
     if (updateCountdown() == 0) {
@@ -90,6 +111,7 @@ startButton.addEventListener('click', function() {
 stopButton.addEventListener('click', function() {
     resetCountdown();
     timerStop();
+    saveLastTime();
 });
 
 resetButton.addEventListener('click', function() {
