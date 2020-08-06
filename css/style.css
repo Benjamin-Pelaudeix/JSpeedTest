@@ -82,6 +82,9 @@ h1 {
 hr:nth-child(3) {
     margin-top: 15px;
 }
+#reset {
+    margin: 15px auto;
+}
 #last {
     margin: 15px 0;
     font-size: 1.2rem;
