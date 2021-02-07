@@ -13,7 +13,10 @@ Voici un aperçu des fonctionnalités implémentées :
   - Arrêter le chronomètre.
 - Affichage du meilleur temps de réaction.
 ### Interface
-Bientôt...
+![](https://i.imgur.com/NtUaZV5.png)
+![](https://i.imgur.com/pr8gHxE.png)
+![](https://i.imgur.com/x6qjwOH.png)
+![](https://i.imgur.com/TV4NGYa.png)
 
 ## Outils
 ### Langages
