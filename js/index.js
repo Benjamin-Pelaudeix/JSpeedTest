@@ -8,6 +8,12 @@ const timerMilliseconds = document.getElementById('milliseconds');
 const timerHundreds = document.getElementById('hundreds');
 const millisecondsLastTimeResult = document.getElementById('millisecondsResult');
 const hundredsLastTimeResult = document.getElementById('hundredsResult');
+const countdown = document.getElementById('countdown');
+
+countdown.textContent = 'STOP'
+countdown.style.color = 'red'
+
+let timerInterval
 
 timerMilliseconds.innerHTML = "00";
 timerHundreds.innerHTML = "00";
@@ -25,30 +31,26 @@ closeButton.addEventListener('click', function() {
     game.style.display = 'none';
 });
 
-const startingSeconds = 3;
-let time = startingSeconds;
-const countdown = document.getElementById('countdown');
+
 
 let randomTiming = Math.floor(Math.random() * 4001);
 
 function updateCountdown() {
-    let seconds = time;
-    while (time !== 0) {
-        time--;
-        countdown.textContent = seconds;
-        countdown.style.color = 'red';
+    let startingIn = 3;
+    let start = false;
+    if (startingIn === 0) {
+        countdown.textContent = ' GO '
+        countdown.style.color = 'green'
+        start = true;
+    } else {
+        countdown.textContent = String(startingIn)
+        startingIn--
+        setTimeout(() => {
+            countdown.textContent = String(startingIn)
+            startingIn--
+        }, 100)
     }
-    if (time === 0) {
-        countdown.textContent = 'GO';
-        countdown.style.color = 'green';
-    }
-    return time;
-}
-
-function resetCountdown() {
-    time = startingSeconds;
-    clearTimeout(interval);
-    countdown.textContent = ' ';
+    return start;
 }
 
 let hundreds = 0, milliseconds = 0;
@@ -101,18 +103,34 @@ function saveLastTime() {
     
 }
 
+let random = Math.floor(Math.random() * 5001)
+
 startButton.addEventListener('click', function() {
-    interval = setTimeout(updateCountdown, randomTiming);
-    if (updateCountdown() == 0) {
+    countdown.textContent = 'READY'
+    countdown.style.color = 'white'
+    setTimeout(() => {
+        countdown.textContent = 'GO'
+        countdown.style.color = 'green'
         timerInterval = setInterval(timer, 10);
-    }
+    }, random)
+    startButton.disabled = true;
 });
 
 stopButton.addEventListener('click', function() {
-    resetCountdown();
     timerStop();
     saveLastTime();
+    startButton.disabled = false;
+    countdown.textContent = 'STOP'
+    countdown.style.color = 'red'
 });
+
+stopButton.addEventListener('keypress', ev => {
+    if (ev.keyCode === 32) {
+        timerStop();
+        saveLastTime();
+        startButton.disabled = false;
+    }
+})
 
 resetButton.addEventListener('click', function() {
     timerReset();
